@@ -64,8 +64,49 @@ namespace ConsoleApp2DerekB
             Console.WriteLine("{0} says {1}", Spot.name, Spot.sound);
             Console.WriteLine(Spot.toString());
             Console.WriteLine("Num of animals: " + Animal.getNumOfAnimals());
-            Console.WriteLine(Spot.getSum(2, 3));
+            Console.WriteLine(Spot.getSum(num2:5));
             Console.WriteLine(Spot.getSum(2.4));
+
+            // create object using the obj initializer
+            Animal Groovy = new Animal()
+            {
+                name = "Grover",
+                height = 4,
+                weight = 50,
+                sound = "grrryyy"
+            };
+
+            Dog charlie = new Dog();
+
+            Console.WriteLine(charlie.toString());
+
+            charlie = new Dog(10, 20, "Charlie", "Grreyyyy", "chicken of the sea");
+            Console.WriteLine(charlie.toString());
+
         }
     }
+
+    class Dog : Animal
+    {
+        public String favFood { get; set; }
+
+        public Dog() : base() {     //Constructor same name as class
+            this.favFood = "No favorite food";
+        }
+
+        public Dog(double height, double weight, string name, string sound, string favFood) : base(height, weight, sound, name){
+           /* this.height = height;
+            this.weight = weight;
+            this.sound = sound;
+            this.name = name; */
+            this.favFood = favFood;
+        }
+
+        new public string toString()
+        {
+            return String.Format("{0} is {1} inches tall, weighs{2} lbs and likes to say {3} and eats and {4} is it's favorite food",
+                                 name, height, weight, sound, favFood);
+        }
+    }
+
 }
