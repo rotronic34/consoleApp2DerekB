@@ -24,6 +24,7 @@ namespace ConsoleApp2DerekB
             this.weight = 0;
             this.sound = "no sound";
             this.name = "no name";
+            numOfAnimals++;
         }
 
         public Animal(double height, double weight, string sound, string name){
@@ -31,6 +32,7 @@ namespace ConsoleApp2DerekB
             this.weight = weight;
             this.sound = sound;
             this.name = name;
+            numOfAnimals++;
         }
 
         static int numOfAnimals = 0;
@@ -39,9 +41,17 @@ namespace ConsoleApp2DerekB
             return numOfAnimals;
         }
 
+        //creating a couple other methods for animals to operate with
+
+        public string toString(){
+            return String.Format("{0} is {1} inches tall, weighs{2} lbs and likes to say {3}",name, height, weight, sound);
+        }
+
         public static void Main(string[] args)
         {
-
+            Animal Spot = new Animal(15, 10, "wolfy", "Spot");
+            Console.WriteLine("{0} says {1}", Spot.name, Spot.sound);
+            Console.WriteLine(Spot.toString());
         }
     }
 }
