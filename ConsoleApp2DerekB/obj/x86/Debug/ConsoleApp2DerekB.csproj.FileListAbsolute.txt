@@ -1,0 +1,5 @@
+/Users/apple/Projects/ConsoleApp2DerekB/ConsoleApp2DerekB/bin/Debug/ConsoleApp2DerekB.exe
+/Users/apple/Projects/ConsoleApp2DerekB/ConsoleApp2DerekB/bin/Debug/ConsoleApp2DerekB.pdb
+/Users/apple/Projects/ConsoleApp2DerekB/ConsoleApp2DerekB/obj/x86/Debug/ConsoleApp2DerekB.csproj.CoreCompileInputs.cache
+/Users/apple/Projects/ConsoleApp2DerekB/ConsoleApp2DerekB/obj/x86/Debug/ConsoleApp2DerekB.exe
+/Users/apple/Projects/ConsoleApp2DerekB/ConsoleApp2DerekB/obj/x86/Debug/ConsoleApp2DerekB.pdb
