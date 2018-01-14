@@ -122,5 +122,12 @@ namespace ConsoleApp2DerekB
     {
         public abstract double area();
 
+        public void sayHi()
+        {
+            Console.WriteLine("hEllo you!"); //only abstract methods in interfaces, but abstract classes can do real methods
+        }
+
+
+
     }
 }
