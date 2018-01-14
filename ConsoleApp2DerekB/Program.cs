@@ -127,6 +127,61 @@ namespace ConsoleApp2DerekB
             Console.WriteLine("hEllo you!"); //only abstract methods in interfaces, but abstract classes can do real methods
         }
 
+        public interface ShapeItem
+        {
+            double area();
+        }
+
+        class Rectangle : Shape
+        {
+            private double length;
+            private double width;
+
+            public Rectangle(double num1, double num2)
+            {
+                length = num1;
+                width = num2;   
+            }
+
+            public override double area()
+            {
+            return length * width;
+
+            }
+        }
+
+        class Triangle : Shape
+        {
+            private double theBase;
+            private double height;
+
+            public Triangle(double num1, double num2)
+            {
+                theBase = num1;
+                height = num2;
+            }
+
+            public override double area()
+            {
+                return .5 *(theBase * height);
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
