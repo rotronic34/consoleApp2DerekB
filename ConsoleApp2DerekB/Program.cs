@@ -1,5 +1,5 @@
 ﻿using System;
-
+using static ConsoleApp2DerekB.Shape;
 
 namespace ConsoleApp2DerekB
 {
@@ -66,28 +66,15 @@ namespace ConsoleApp2DerekB
 
         public static void Main(string[] args)
         {
-            Animal Spot = new Animal(15, 10, "wolfy", "Spot");
-            Console.WriteLine("{0} says {1}", Spot.name, Spot.sound);
-            Console.WriteLine(Spot.toString());
-            Console.WriteLine("Num of animals: " + Animal.getNumOfAnimals());
-            Console.WriteLine(Spot.getSum(num2: 5));
-            Console.WriteLine(Spot.getSum(2.4));
+            Shape rect = new Rectangle(5, 5);
+            Shape tri = new Triangle(5, 5);
 
-            // create object using the obj initializer
-            Animal Groovy = new Animal()
-            {
-                name = "Grover",
-                height = 4,
-                weight = 50,
-                sound = "grrryyy"
-            };
+            Console.WriteLine("Rect area "+ rect.area());
+            Console.WriteLine("Tri area "+ tri.area());
 
-            Dog charlie = new Dog();
+            Rectangle combRect = new Rectangle(5, 5) + new Rectangle(5, 5);
 
-            Console.WriteLine(charlie.toString());
-
-            charlie = new Dog(10, 20, "Charlie", "Grreyyyy", "chicken of the sea");
-            Console.WriteLine(charlie.toString());
+            Console.WriteLine("combRect area " + combRect.area());
 
         }
     }
@@ -132,7 +119,7 @@ namespace ConsoleApp2DerekB
             double area();
         }
 
-        class Rectangle : Shape
+        internal class Rectangle : Shape
         {
             private double length;
             private double width;
@@ -148,9 +135,19 @@ namespace ConsoleApp2DerekB
             return length * width;
 
             }
+
+            public static Rectangle operator+ (Rectangle rect1, Rectangle rect2)
+            {
+                double rectLength = rect1.length + rect2.length;
+                double rectWidth = rect1.width + rect2.width;
+                 
+                return new Rectangle(rectLength, rectWidth);
+            }
+
+
         }
 
-        class Triangle : Shape
+        internal class Triangle : Shape
         {
             private double theBase;
             private double height;
